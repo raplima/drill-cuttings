@@ -16,18 +16,20 @@ from skimage.transform import downscale_local_mean
 from skimage.util import img_as_ubyte
 from tqdm import tqdm
 
+# list with the name of the SEM images without extension
 img_names = [
-    '485140_11_500nm_BSED',
-    '485140_14_500nm_BSED',
-    '485140_15_500nm_BSED_trimmed',
-    '485140_01_500nm_BSED'
+    '06_500nm_BSED'
 ]
 
+# to save intermediate images
 save_steps = False
 
 for img_name in img_names:
-    fname_in = f'C:/Projects/drill-cuttings/data/SEM_samples/{img_name}.tif'
-    data_out_dir = 'C:/Projects/drill-cuttings/data/SEM_samples/BS_crops_faster'
+    # location of input file
+    # (a filename assebled with img_names elements)
+    fname_in = os.path.normpath(f'D:\Projects\data\drill-cuttings\BS\{img_name}.tif')
+    # location of output file (a folder)
+    data_out_dir = os.path.normpath(f'D:\Projects\data\drill-cuttings\out')
 
     downscale_factor = 2
     min_intensity = 10.0
@@ -39,8 +41,18 @@ for img_name in img_names:
     min_chip = min_hole/2
     print(f"smallest chip: {min_chip}")
     print(f"smallest hole: {min_hole}")
-    #####################################################################################
 
+    #####################################################################################
+    # check if output folders exist, create them otherwise:
+    if not os.path.isdir(data_out_dir):
+        os.mkdir(data_out_dir)
+
+    for dir_out in ['contours_properties', 'cropped_chips']:
+        if not os.path.isdir(os.path.join(data_out_dir,
+                                dir_out)):
+            os.mkdir(os.path.join(data_out_dir, dir_out))
+    
+    #####################################################################################
     image = imread(fname_in)
     print(f'input shape: {image.shape}')
     image_downscaled = downscale_local_mean(image,
