@@ -1,0 +1,32 @@
+name: py_env
+channels:
+  - plotly
+  - anaconda
+  - conda-forge
+  - defaults
+dependencies:
+  - autopep8
+  - imageio
+  - jupyter_client
+  - jupyter_core
+  - jupyter_server
+  - jupyterlab
+  - matplotlib
+  - notebook
+  - numba
+  - numpy
+  - opencv
+  - pandas
+  - pillow
+  - pip
+  - plotly
+  - pywin32
+  - scikit-image
+  - scikit-learn
+  - scipy
+  - seaborn
+  - setuptools
+  - tqdm
+  - wheel
+  - xarray
+  - yaml
