@@ -15,7 +15,7 @@ The terminal should look something like this:
 
 Now you should be able to segment the individual drill cuttings using the [chip_identification](./chip_identification.py) script - remember to use the `py_env` environment.
 
-# Isolating and segment chips
+# Isolating and segmenting chips
 Open your local [chip_identification](./chip_identification.py) and modify the input and output parameters. 
 ![IO parameters](./resources/params_io.PNG)
 
