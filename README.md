@@ -1,19 +1,20 @@
 # Drill cuttings thin section chip segmentation
 
-A collection of Python scripts to isolate and segment individual drill cuttings chips in thin section scanning electron microscope (SEM) images. 
+A collection of Python scripts to isolate and segment individual chips from scanning electron microscopy (SEM) images of drill cutting samples mounted on thin sections. <img src="./resources/input_output.png" alt="Terminal example" style="zoom: 50%;" />
 
 # Getting started
-Clone this repository to yur local machine using your tool of choice. Install [Anaconda](https://www.anaconda.com/) if you don't have it and open the [Anaconda Prompt](https://docs.anaconda.com/anaconda/user-guide/getting-started/). **Navigate to the location of the cloned repository** and install the [environment](environment.yml) using the command:  
+Clone this repository to your local machine using your tool of choice. Install [Anaconda](https://www.anaconda.com/) –if you don't have it– and open the [Anaconda Prompt](https://docs.anaconda.com/anaconda/user-guide/getting-started/). **Navigate to the location of the cloned repository** and install the [environment](environment.yml) using the command:  
 `conda env create -f environment.yml`
 
 Installing the `environment.yml` might take some time. 
+
 Then, follow the instructions to activate the newly installed environment:  
 `conda activate py_env`
 
 The terminal should look something like this:  
 ![Terminal example](./resources/prompt_env.PNG)
 
-Now you should be able to segment the individual drill cuttings using the [chip_identification](./chip_identification.py) script - remember to use the `py_env` environment.
+Now you should be able to segment the individual drill cutting chips using the [chip_identification](./chip_identification.py) script. Don't forget to use the `py_env` environment.
 
 # Isolating and segmenting chips
 Open your local [chip_identification](./chip_identification.py) and modify the input and output parameters. 
